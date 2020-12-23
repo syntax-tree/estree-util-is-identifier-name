@@ -20,9 +20,9 @@ npm install estree-util-is-identifier-name
 ```js
 var isIdentifierName = require('estree-util-is-identifier-name')
 
-console.log(isIdentifierName.name('$something69')) // => true
-console.log(isIdentifierName.name('69')) // => false
-console.log(isIdentifierName.name('var')) // => true (this does not handle keywords)
+isIdentifierName.name('$something69') // => true
+isIdentifierName.name('69') // => false
+isIdentifierName.name('var') // => true (this does not handle keywords)
 
 isIdentifierName.start(48) // => false (character code for `0`)
 isIdentifierName.cont(48) // => true (character code for `0`)
