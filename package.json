@@ -1,6 +1,6 @@
 {
   "name": "estree-util-is-identifier-name",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Check if something can be an ecmascript (javascript) identifier name",
   "license": "MIT",
   "keywords": [
