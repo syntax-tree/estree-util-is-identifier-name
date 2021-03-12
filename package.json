@@ -28,6 +28,7 @@
     "*.d.ts"
   ],
   "devDependencies": {
+    "@types/tape": "^4.0.0",
     "@unicode/unicode-13.0.0": "^1.0.0",
     "nyc": "^15.0.0",
     "prettier": "^2.0.0",
