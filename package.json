@@ -47,7 +47,7 @@
     "test-coverage": "nyc --reporter lcov tape test.js",
     "build": "rimraf \"*.d.ts\" && tsc",
     "test": "npm run generate && npm run format && npm run test-coverage && npm run build",
-    "prepack": "npm run build"
+    "prepack": "npm run build && npm run format"
   },
   "prettier": {
     "tabWidth": 2,
