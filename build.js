@@ -9,8 +9,8 @@ var regenerate = require('regenerate')
 var idStart = require('@unicode/unicode-13.0.0/Binary_Property/ID_Start/code-points.js')
 var idCont = require('@unicode/unicode-13.0.0/Binary_Property/ID_Continue/code-points.js')
 
-var start = [36 /* `$` */, 95 /* `_` */].concat(idStart.filter(bmp))
-var cont = [0x200c, 0x200d].concat(idCont.filter(bmp))
+var start = [36 /* `$` */, 95 /* `_` */].concat(idStart.filter((d) => bmp(d)))
+var cont = [0x200c, 0x200d].concat(idCont.filter((d) => bmp(d)))
 
 var startRe = regenerate().add(start).toRegExp()
 var contRe = regenerate().add(cont).remove(start).toRegExp()
