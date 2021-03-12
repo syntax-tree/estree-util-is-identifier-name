@@ -1,10 +1,4 @@
-'use strict'
-
-exports.start = start
-exports.cont = cont
-exports.name = name
-
-var id = require('./regex')
+import {start as startRe, cont as contRe} from './regex.js'
 
 /**
  * Checks if the given character code can start an identifier.
@@ -12,8 +6,8 @@ var id = require('./regex')
  * @param {number} code
  */
 // To do: support astrals.
-function start(code) {
-  return id.start.test(String.fromCharCode(code))
+export function start(code) {
+  return startRe.test(String.fromCharCode(code))
 }
 
 /**
@@ -22,9 +16,9 @@ function start(code) {
  * @param {number} code
  */
 // To do: support astrals.
-function cont(code) {
+export function cont(code) {
   var character = String.fromCharCode(code)
-  return id.start.test(character) || id.cont.test(character)
+  return startRe.test(character) || contRe.test(character)
 }
 
 /**
@@ -32,7 +26,7 @@ function cont(code) {
  *
  * @param {string} name
  */
-function name(name) {
+export function name(name) {
   var index = -1
 
   while (++index < name.length) {

@@ -9,6 +9,9 @@ Check if something can be an identifier name.
 
 ## Install
 
+This package is ESM only: Node 12+ is needed to use it and it must be `import`ed
+instead of `require`d.
+
 [npm][]:
 
 ```sh
@@ -18,27 +21,30 @@ npm install estree-util-is-identifier-name
 ## Use
 
 ```js
-var isIdentifierName = require('estree-util-is-identifier-name')
+import {name, start, cont} from 'estree-util-is-identifier-name'
 
-isIdentifierName.name('$something69') // => true
-isIdentifierName.name('69') // => false
-isIdentifierName.name('var') // => true (this does not handle keywords)
+name('$something69') // => true
+name('69') // => false
+name('var') // => true (this does not handle keywords)
 
-isIdentifierName.start(48) // => false (character code for `0`)
-isIdentifierName.cont(48) // => true (character code for `0`)
+start(48) // => false (character code for `0`)
+cont(48) // => true (character code for `0`)
 ```
 
 ## API
 
-### `isIdentifierName.name(value)`
+This package exports the following identifiers: `name`, `start`, and `cont`.
+There is no default export.
+
+### `name(value)`
 
 Checks if the given string is a valid identifier name.
 
-### `isIdentifierName.start(code)`
+### `start(code)`
 
 Checks if the given character code can start an identifier.
 
-### `isIdentifierName.cont(code)`
+### `cont(code)`
 
 Checks if the given character code can continue an identifier.
 
