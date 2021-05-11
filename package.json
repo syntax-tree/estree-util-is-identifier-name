@@ -12,11 +12,11 @@
     "identifier",
     "character"
   ],
-  "repository": "wooorm/estree-util-is-identifier-name",
-  "bugs": "https://github.com/wooorm/estree-util-is-identifier-name/issues",
+  "repository": "syntax-tree/estree-util-is-identifier-name",
+  "bugs": "https://github.com/syntax-tree/estree-util-is-identifier-name/issues",
   "funding": {
-    "type": "github",
-    "url": "https://github.com/sponsors/wooorm"
+    "type": "opencollective",
+    "url": "https://opencollective.com/unified"
   },
   "author": "Titus Wormer <tituswormer@gmail.com> (https://wooorm.com)",
   "contributors": [

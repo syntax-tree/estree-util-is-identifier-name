@@ -4,6 +4,9 @@
 [![Coverage][coverage-badge]][coverage]
 [![Downloads][downloads-badge]][downloads]
 [![Size][size-badge]][size]
+[![Sponsors][sponsors-badge]][collective]
+[![Backers][backers-badge]][collective]
+[![Chat][chat-badge]][chat]
 
 Check if something can be an identifier name.
 
@@ -59,13 +62,13 @@ Checks if the given character code can continue an identifier.
 
 <!-- Definitions -->
 
-[build-badge]: https://github.com/wooorm/estree-util-is-identifier-name/workflows/main/badge.svg
+[build-badge]: https://github.com/syntax-tree/estree-util-is-identifier-name/workflows/main/badge.svg
 
-[build]: https://github.com/wooorm/estree-util-is-identifier-name/actions
+[build]: https://github.com/syntax-tree/estree-util-is-identifier-name/actions
 
-[coverage-badge]: https://img.shields.io/codecov/c/github/wooorm/estree-util-is-identifier-name.svg
+[coverage-badge]: https://img.shields.io/codecov/c/github/syntax-tree/estree-util-is-identifier-name.svg
 
-[coverage]: https://codecov.io/github/wooorm/estree-util-is-identifier-name
+[coverage]: https://codecov.io/github/syntax-tree/estree-util-is-identifier-name
 
 [downloads-badge]: https://img.shields.io/npm/dm/estree-util-is-identifier-name.svg
 
@@ -74,6 +77,16 @@ Checks if the given character code can continue an identifier.
 [size-badge]: https://img.shields.io/bundlephobia/minzip/estree-util-is-identifier-name.svg
 
 [size]: https://bundlephobia.com/result?p=estree-util-is-identifier-name
+
+[sponsors-badge]: https://opencollective.com/unified/sponsors/badge.svg
+
+[backers-badge]: https://opencollective.com/unified/backers/badge.svg
+
+[collective]: https://opencollective.com/unified
+
+[chat-badge]: https://img.shields.io/badge/chat-discussions-success.svg
+
+[chat]: https://github.com/syntax-tree/unist/discussions
 
 [npm]: https://docs.npmjs.com/cli/install
 
