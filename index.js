@@ -17,7 +17,7 @@ export function start(code) {
  */
 // To do: support astrals.
 export function cont(code) {
-  var character = String.fromCharCode(code)
+  const character = String.fromCharCode(code)
   return startRe.test(character) || contRe.test(character)
 }
 
@@ -27,7 +27,7 @@ export function cont(code) {
  * @param {string} name
  */
 export function name(name) {
-  var index = -1
+  let index = -1
 
   while (++index < name.length) {
     if (!(index ? cont : start)(name.charCodeAt(index))) return false

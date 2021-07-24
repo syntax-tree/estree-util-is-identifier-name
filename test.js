@@ -1,7 +1,7 @@
 import test from 'tape'
 import {start, cont, name} from './index.js'
 
-test('estree-util-is-identifier-name', function (t) {
+test('estree-util-is-identifier-name', (t) => {
   t.true(start('a'.charCodeAt(0)), 'should say `a` is a start code')
   t.true(start('_'.charCodeAt(0)), 'should say `_` is a start code')
   t.false(start('1'.charCodeAt(0)), 'should not say `1` is a start code')
