@@ -1,14 +1,14 @@
 // Based on:
 // <https://github.com/babel/babel/blob/main/packages/babel-helper-validator-identifier/scripts/generate-identifier-regex.js>
 
-import fs from 'fs'
-import path from 'path'
+import fs from 'node:fs'
+import path from 'node:path'
 import regenerate from 'regenerate'
 import idStart from '@unicode/unicode-13.0.0/Binary_Property/ID_Start/code-points.js'
 import idCont from '@unicode/unicode-13.0.0/Binary_Property/ID_Continue/code-points.js'
 
 const start = [36 /* `$` */, 95 /* `_` */].concat(idStart.filter((d) => bmp(d)))
-const cont = [0x200c, 0x200d].concat(idCont.filter((d) => bmp(d)))
+const cont = [0x20_0c, 0x20_0d].concat(idCont.filter((d) => bmp(d)))
 
 const startRe = regenerate().add(start).toRegExp()
 const contRe = regenerate().add(cont).remove(start).toRegExp()
@@ -24,5 +24,5 @@ fs.writeFileSync(
 )
 
 function bmp(code) {
-  return code <= 0xffff /* BMP */
+  return code <= 0xff_ff /* BMP */
 }
