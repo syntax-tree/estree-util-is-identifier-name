@@ -8,17 +8,55 @@
 [![Backers][backers-badge]][collective]
 [![Chat][chat-badge]][chat]
 
-Check if something can be an identifier name.
+[estree][] utility to check if something can be an identifier.
+
+## Contents
+
+*   [What is this?](#what-is-this)
+*   [When should I use this?](#when-should-i-use-this)
+*   [Install](#install)
+*   [Use](#use)
+*   [API](#api)
+    *   [`name(value)`](#namevalue)
+    *   [`start(code)`](#startcode)
+    *   [`cont(code)`](#contcode)
+*   [Types](#types)
+*   [Compatibility](#compatibility)
+*   [Related](#related)
+*   [Contribute](#contribute)
+*   [License](#license)
+
+## What is this?
+
+This package is a utility that can be used to check if something can be an
+identifier name.
+For example, `a`, `_`, and `a1` are fine, but `1` and `-` are not.
+
+## When should I use this?
+
+You can use this utility when generating IDs from strings or parsing IDs.
 
 ## Install
 
-This package is ESM only: Node 12+ is needed to use it and it must be `import`ed
-instead of `require`d.
-
-[npm][]:
+This package is [ESM only][esm].
+In Node.js (version 12.20+, 14.14+, 16.0+, or 18.0+), install with [npm][]:
 
 ```sh
 npm install estree-util-is-identifier-name
+```
+
+In Deno with [`esm.sh`][esmsh]:
+
+```js
+import * as isIdentifierName from 'https://esm.sh/estree-util-is-identifier-name@2'
+```
+
+In browsers with [`esm.sh`][esmsh]:
+
+```html
+<script type="module">
+  import * as isIdentifierName from 'https://esm.sh/estree-util-is-identifier-name@2?bundle'
+</script>
 ```
 
 ## Use
@@ -36,25 +74,49 @@ cont(48) // => true (character code for `0`)
 
 ## API
 
-This package exports the following identifiers: `name`, `start`, and `cont`.
+This package exports the identifiers `name`, `start`, and `cont`.
 There is no default export.
 
 ### `name(value)`
 
-Checks if the given string is a valid identifier name.
+Checks if `value` (`string`) is a valid identifier name (`boolean`).
 
 ### `start(code)`
 
-Checks if the given character code can start an identifier.
+Checks if the given character code (`number`) can start an identifier
+(`boolean`).
 
 ### `cont(code)`
 
-Checks if the given character code can continue an identifier.
+Checks if the given character code (`number`) can continue an identifier
+(`boolean`).
+
+## Types
+
+This package is fully typed with [TypeScript][].
+It exports no additional types.
+
+## Compatibility
+
+Projects maintained by the unified collective are compatible with all maintained
+versions of Node.js.
+As of now, that is Node.js 12.20+, 14.14+, 16.0+, and 18.0+.
+Our projects sometimes work with older versions, but this is not guaranteed.
 
 ## Related
 
 *   [`goto-bus-stop/estree-is-identifier`](https://github.com/goto-bus-stop/estree-is-identifier)
     — check if an AST node is an identifier
+
+## Contribute
+
+See [`contributing.md`][contributing] in [`syntax-tree/.github`][health] for
+ways to get started.
+See [`support.md`][support] for ways to get help.
+
+This project has a [code of conduct][coc].
+By interacting with this repository, organization, or community you agree to
+abide by its terms.
 
 ## License
 
@@ -90,6 +152,22 @@ Checks if the given character code can continue an identifier.
 
 [npm]: https://docs.npmjs.com/cli/install
 
+[esm]: https://gist.github.com/sindresorhus/a39789f98801d908bbc7ff3ecc99d99c
+
+[esmsh]: https://esm.sh
+
+[typescript]: https://www.typescriptlang.org
+
 [license]: license
 
 [author]: https://wooorm.com
+
+[health]: https://github.com/syntax-tree/.github
+
+[contributing]: https://github.com/syntax-tree/.github/blob/main/contributing.md
+
+[support]: https://github.com/syntax-tree/.github/blob/main/support.md
+
+[coc]: https://github.com/syntax-tree/.github/blob/main/code-of-conduct.md
+
+[estree]: https://github.com/estree/estree
