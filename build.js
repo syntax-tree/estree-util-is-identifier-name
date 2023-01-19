@@ -4,8 +4,14 @@
 import fs from 'node:fs'
 import path from 'node:path'
 import regenerate from 'regenerate'
-import idStart from '@unicode/unicode-15.0.0/Binary_Property/ID_Start/code-points.js'
-import idCont from '@unicode/unicode-15.0.0/Binary_Property/ID_Continue/code-points.js'
+// @ts-expect-error untyped.
+import idStart_ from '@unicode/unicode-15.0.0/Binary_Property/ID_Start/code-points.js'
+/** @type {Array<number>} */
+// @ts-expect-error untyped.
+import idCont_ from '@unicode/unicode-15.0.0/Binary_Property/ID_Continue/code-points.js'
+
+const idStart = /** @type {Array<number>} */ (idStart_)
+const idCont = /** @type {Array<number>} */ (idCont_)
 
 const start = [36 /* `$` */, 95 /* `_` */].concat(idStart.filter((d) => bmp(d)))
 const cont = [0x20_0c, 0x20_0d].concat(idCont.filter((d) => bmp(d)))
@@ -23,6 +29,14 @@ fs.writeFileSync(
   ].join('\n')
 )
 
+/**
+ * Check if `code` is BMP.
+ *
+ * @param {number} code
+ *   Character code.
+ * @returns {boolean}
+ *   Whether `code` is BMP.
+ */
 function bmp(code) {
   return code <= 0xff_ff /* BMP */
 }
