@@ -4,8 +4,8 @@
 import fs from 'node:fs'
 import path from 'node:path'
 import regenerate from 'regenerate'
-import idStart from '@unicode/unicode-13.0.0/Binary_Property/ID_Start/code-points.js'
-import idCont from '@unicode/unicode-13.0.0/Binary_Property/ID_Continue/code-points.js'
+import idStart from '@unicode/unicode-15.0.0/Binary_Property/ID_Start/code-points.js'
+import idCont from '@unicode/unicode-15.0.0/Binary_Property/ID_Continue/code-points.js'
 
 const start = [36 /* `$` */, 95 /* `_` */].concat(idStart.filter((d) => bmp(d)))
 const cont = [0x20_0c, 0x20_0d].concat(idCont.filter((d) => bmp(d)))
