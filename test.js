@@ -1,8 +1,15 @@
 import assert from 'node:assert/strict'
 import test from 'node:test'
 import {start, cont, name} from './index.js'
+import * as mod from './index.js'
 
-test('estree-util-is-identifier-name', () => {
+test('isIdentifierName', () => {
+  assert.deepEqual(
+    Object.keys(mod).sort(),
+    ['cont', 'name', 'start'],
+    'should expose the public api'
+  )
+
   assert.ok(start('a'.charCodeAt(0)), 'should say `a` is a start code')
   assert.ok(start('_'.charCodeAt(0)), 'should say `_` is a start code')
   assert.ok(!start('1'.charCodeAt(0)), 'should not say `1` is a start code')
