@@ -27,10 +27,9 @@
   "main": "index.js",
   "types": "index.d.ts",
   "files": [
+    "lib/",
     "index.d.ts",
-    "index.js",
-    "regex.d.ts",
-    "regex.js"
+    "index.js"
   ],
   "devDependencies": {
     "@types/regenerate": "^1.0.0",
