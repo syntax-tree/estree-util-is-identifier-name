@@ -49,14 +49,14 @@ npm install estree-util-is-identifier-name
 In Deno with [`esm.sh`][esmsh]:
 
 ```js
-import {cont, name, start} from 'https://esm.sh/estree-util-is-identifier-name@2'
+import {cont, name, start} from 'https://esm.sh/estree-util-is-identifier-name@3'
 ```
 
 In browsers with [`esm.sh`][esmsh]:
 
 ```html
 <script type="module">
-  import {cont, name, start} from 'https://esm.sh/estree-util-is-identifier-name@2?bundle'
+  import {cont, name, start} from 'https://esm.sh/estree-util-is-identifier-name@3?bundle'
 </script>
 ```
 
