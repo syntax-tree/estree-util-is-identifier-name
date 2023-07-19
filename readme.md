@@ -17,9 +17,10 @@
 *   [Install](#install)
 *   [Use](#use)
 *   [API](#api)
-    *   [`cont(code)`](#contcode)
-    *   [`name(name)`](#namename)
+    *   [`cont(code[, options])`](#contcode-options)
+    *   [`name(name[, options])`](#namename-options)
     *   [`start(code)`](#startcode)
+    *   [Options](#options)
 *   [Types](#types)
 *   [Compatibility](#compatibility)
 *   [Related](#related)
@@ -78,7 +79,7 @@ This package exports the identifiers [`cont`][cont], [`name`][name], and
 [`start`][start].
 There is no default export.
 
-### `cont(code)`
+### `cont(code[, options])`
 
 Checks if the given code point can continue an identifier.
 
@@ -86,12 +87,14 @@ Checks if the given code point can continue an identifier.
 
 *   `code` (`number`)
     — code point to check
+*   `options` ([`Options`][api-options], optional)
+    — configuration
 
 ###### Returns
 
 Whether `code` can continue an identifier (`boolean`).
 
-### `name(name)`
+### `name(name[, options])`
 
 Checks if the given value is a valid identifier name.
 
@@ -99,6 +102,8 @@ Checks if the given value is a valid identifier name.
 
 *   `name` (`string`)
     — identifier to check
+*   `options` ([`Options`][api-options], optional)
+    — configuration
 
 ###### Returns
 
@@ -117,10 +122,19 @@ Checks if the given code point can start an identifier.
 
 Whether `code` can start an identifier (`boolean`).
 
+### Options
+
+Configuration (TypeScript type).
+
+###### Fields
+
+*   `jsx` (`boolean`, default: `false`)
+    — support JSX identifiers.
+
 ## Types
 
 This package is fully typed with [TypeScript][].
-It exports no additional types.
+It exports the additional type [`Options`][api-options].
 
 ## Compatibility
 
@@ -198,8 +212,10 @@ abide by its terms.
 
 [estree]: https://github.com/estree/estree
 
-[cont]: #contcode
+[cont]: #contcode-options
 
-[name]: #namename
+[name]: #namename-options
 
 [start]: #startcode
+
+[api-options]: #options

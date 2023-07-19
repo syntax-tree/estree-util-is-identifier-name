@@ -39,6 +39,14 @@ test('isIdentifierName', () => {
     'should say `0xd8_00 0xde_a7` (together 0x1_02_a7) is a cont code'
   )
   assert.ok(!cont(0xd8_00), 'should not say `0xd8_00` is a cont code')
+  assert.ok(
+    !cont('-'.codePointAt(0)),
+    'should not say `-` is a cont code normally'
+  )
+  assert.ok(
+    cont('-'.codePointAt(0), {jsx: true}),
+    'should say `-` is a cont code w/ `jsx: true`'
+  )
 
   assert.ok(!name(''), 'should not say `` (empty string) is a name')
   assert.ok(name('a'), 'should say `a` is a name')
@@ -52,4 +60,7 @@ test('isIdentifierName', () => {
   assert.ok(!name('-aaa'), 'should not say `-aaa` is a name')
   assert.ok(name('ಠ_ಠ'), 'should say `ಠ_ಠ` is a name')
   assert.ok(name('𐊧'), 'should say `𐊧` (0x1_02_a7) is a name')
+  assert.ok(!name('a-b'), 'should not say `a-b` is a name normally')
+  assert.ok(name('a-b', {jsx: true}), 'should say `a-b` is a jsx name')
+  assert.ok(name('a-', {jsx: true}), 'should say `a-` is a jsx name')
 })
