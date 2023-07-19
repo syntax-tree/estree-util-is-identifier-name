@@ -58,11 +58,7 @@
     "trailingComma": "none"
   },
   "xo": {
-    "prettier": true,
-    "rules": {
-      "no-misleading-character-class": "off",
-      "unicorn/prefer-code-point": "off"
-    }
+    "prettier": true
   },
   "remarkConfig": {
     "plugins": [

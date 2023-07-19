@@ -68,8 +68,8 @@ name('$something69') // => true
 name('69') // => false
 name('var') // => true (this does not handle keywords)
 
-start(48) // => false (character code for `0`)
-cont(48) // => true (character code for `0`)
+start(48) // => false (code point for `'0'`)
+cont(48) // => true (code point for `'0'`)
 ```
 
 ## API
@@ -80,12 +80,12 @@ There is no default export.
 
 ### `cont(code)`
 
-Checks if the given character code can continue an identifier.
+Checks if the given code point can continue an identifier.
 
 ###### Parameters
 
 *   `code` (`number`)
-    — character code to check
+    — code point to check
 
 ###### Returns
 
@@ -106,12 +106,12 @@ Whether `name` can be an identifier (`boolean`).
 
 ### `start(code)`
 
-Checks if the given character code can start an identifier.
+Checks if the given code point can start an identifier.
 
 ###### Parameters
 
 *   `code` (`number`)
-    — character code to check
+    — code point to check
 
 ###### Returns
 
