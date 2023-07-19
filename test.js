@@ -1,15 +1,14 @@
 import assert from 'node:assert/strict'
 import test from 'node:test'
-import {cont, name, start} from './index.js'
+import {cont, name, start} from 'estree-util-is-identifier-name'
 
 test('isIdentifierName', async function (t) {
   await t.test('core', async function (t) {
     await t.test('should expose the public api', async function () {
-      assert.deepEqual(Object.keys(await import('./index.js')).sort(), [
-        'cont',
-        'name',
-        'start'
-      ])
+      assert.deepEqual(
+        Object.keys(await import('estree-util-is-identifier-name')).sort(),
+        ['cont', 'name', 'start']
+      )
     })
   })
 
