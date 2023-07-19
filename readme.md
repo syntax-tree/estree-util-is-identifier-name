@@ -40,7 +40,7 @@ You can use this utility when generating IDs from strings or parsing IDs.
 ## Install
 
 This package is [ESM only][esm].
-In Node.js (version 14.14+ and 16.0+), install with [npm][]:
+In Node.js (version 16+), install with [npm][]:
 
 ```sh
 npm install estree-util-is-identifier-name
@@ -49,14 +49,14 @@ npm install estree-util-is-identifier-name
 In Deno with [`esm.sh`][esmsh]:
 
 ```js
-import * as isIdentifierName from 'https://esm.sh/estree-util-is-identifier-name@2'
+import {cont, name, start} from 'https://esm.sh/estree-util-is-identifier-name@2'
 ```
 
 In browsers with [`esm.sh`][esmsh]:
 
 ```html
 <script type="module">
-  import * as isIdentifierName from 'https://esm.sh/estree-util-is-identifier-name@2?bundle'
+  import {cont, name, start} from 'https://esm.sh/estree-util-is-identifier-name@2?bundle'
 </script>
 ```
 
@@ -75,8 +75,9 @@ cont(48) // => true (code point for `'0'`)
 
 ## API
 
-This package exports the identifiers [`cont`][cont], [`name`][name], and
-[`start`][start].
+This package exports the identifiers [`cont`][api-cont],
+[`name`][api-name], and
+[`start`][api-start].
 There is no default export.
 
 ### `cont(code[, options])`
@@ -138,10 +139,13 @@ It exports the additional type [`Options`][api-options].
 
 ## Compatibility
 
-Projects maintained by the unified collective are compatible with all maintained
+Projects maintained by the unified collective are compatible with maintained
 versions of Node.js.
-As of now, that is Node.js 14.14+ and 16.0+.
-Our projects sometimes work with older versions, but this is not guaranteed.
+
+When we cut a new major release, we drop support for unmaintained versions of
+Node.
+This means we try to keep the current release line,
+`estree-util-is-identifier-name@^2`, compatible with Node.js 12.
 
 ## Related
 
@@ -176,9 +180,9 @@ abide by its terms.
 
 [downloads]: https://www.npmjs.com/package/estree-util-is-identifier-name
 
-[size-badge]: https://img.shields.io/bundlephobia/minzip/estree-util-is-identifier-name.svg
+[size-badge]: https://img.shields.io/badge/dynamic/json?label=minzipped%20size&query=$.size.compressedSize&url=https://deno.bundlejs.com/?q=estree-util-is-identifier-name
 
-[size]: https://bundlephobia.com/result?p=estree-util-is-identifier-name
+[size]: https://bundlejs.com/?q=estree-util-is-identifier-name
 
 [sponsors-badge]: https://opencollective.com/unified/sponsors/badge.svg
 
@@ -212,10 +216,10 @@ abide by its terms.
 
 [estree]: https://github.com/estree/estree
 
-[cont]: #contcode-options
+[api-cont]: #contcode-options
 
-[name]: #namename-options
+[api-name]: #namename-options
 
-[start]: #startcode
+[api-start]: #startcode
 
 [api-options]: #options
